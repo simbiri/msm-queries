@@ -1,0 +1,54 @@
+<h1>
+  List of all actors
+</h1>
+
+<hr>
+
+<table border="1">
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Image
+    </th>
+
+    <th>
+      Name
+    </th>
+
+    <th>
+      Dob
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <%@array_actors.each do |actor_row|%>
+    <tr>
+      <td>
+        <%=actor_row.id%>
+      </td>
+
+      <td>
+        <img src=<%="#{actor_row.image}"%>, style="width:250px;">
+      </td>
+
+      <td>
+        <%=actor_row.name%>
+      </td>
+
+      <td>
+        <%=actor_row.dob%>
+      </td>
+
+      <td>
+        <a href=<%="/actors/#{actor_row.id}"%>>
+          Show details
+        </a>
+      </td>
+    </tr>
+  <%end%>
+</table>
