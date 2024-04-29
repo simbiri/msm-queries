@@ -1,0 +1,114 @@
+<h1>
+  Director #<%=@director_row.id%> details
+</h1>
+
+<a href="/directors">
+  Go back
+</a>
+
+<hr>
+
+<dl>
+  <dt>
+    Name
+  </dt>
+  <dd>
+    <%=@director_row.name%>
+  </dd>
+
+  <dt>
+    Dob
+  </dt>
+  <dd>
+    <%=@director_row.dob%>
+  </dd>
+
+  <dt>
+    Bio
+  </dt>
+  <dd>
+   <%=@director_row.bio%>
+  </dd>
+
+  <dt>
+    Image
+  </dt>
+  <dd>
+    <img src=<%="#{@director_row.image}"%> style="width:250px;">
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%=@director_row.created_at%>
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%=@director_row.updated_at%>
+  </dd>
+</dl>
+
+<hr>
+
+<h2>Filmography</h2>
+
+<table border="1">
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Image
+    </th>
+
+    <th>
+      Title
+    </th>
+
+    <th>
+      Year
+    </th>
+
+    <th>
+      Director
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <% @director_movies.each do |movie_row|%>
+  <tr>
+    <td>
+      <%=movie_row.id%>
+    </td>
+
+    <td>
+      <img src=<%="#{movie_row.image}"%> style="width:250px;">
+    </td>
+
+    <td>
+     <%=movie_row.title%>
+    </td>
+
+    <td>
+      <%=movie_row.year.to_s%>
+    </td>
+
+    <td>
+    <%=@director_row.name%>
+    </td>
+
+    <td>
+      <a href=<%="/movies/#{movie_row.id}"%>>
+        Show details
+      </a>
+    </td>
+  </tr>
+  <%end%>
+</table>

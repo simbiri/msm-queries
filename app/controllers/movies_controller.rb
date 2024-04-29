@@ -5,6 +5,8 @@ class MoviesController < ApplicationController
   end
 
   def movie_details
+    id = params.fetch("movie_id").to_i
+    @movie_row = Movie.where({:id=>id})[0]
     render({ :template => "movies_templates/movie_details" })
   end
 end
