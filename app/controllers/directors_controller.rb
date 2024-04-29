@@ -8,7 +8,7 @@ class DirectorsController < ApplicationController
     youngest = Director.all.order(:dob).reverse_order[0]
     @young_name = youngest.name
     @young_id = youngest.id
-    @young_dob = (youngest.dob).strftime("%B %d, %Y")
+    @young_dob = youngest.dob.strftime("%B %d, %Y")
     render({ :template => "directors_templates/youngest" })
   end
 
@@ -16,7 +16,7 @@ class DirectorsController < ApplicationController
     eldest = Director.all.order(:dob)[0]
     @old_name = eldest.name
     @old_id = eldest.id
-    @old_dob = (eldest.dob).strftime("%B %d, %Y")
+    @old_dob = eldest.dob.strftime("%B %d, %Y")
     render({ :template => "directors_templates/eldest" })
   end
 
