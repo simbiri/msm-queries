@@ -27,7 +27,7 @@
     Bio
   </dt>
   <dd>
-   <%=@director_row.bio%>
+    <%=@director_row.bio%>
   </dd>
 
   <dt>
@@ -83,29 +83,29 @@
   </tr>
 
   <% @director_movies.each do |movie_row|%>
-  <tr>
-    <td>
-      <%=movie_row.id%>
-    </td>
+    <tr>
+      <td>
+        <%=movie_row.id%>
+      </td>
 
-    <td>
-      <img src=<%="#{movie_row.image}"%> style="width:250px;">
-    </td>
+      <td>
+        <img src=<%="#{movie_row.image}"%> style="width:250px;">
+      </td>
 
-    <td>
-     <%=movie_row.title%>
-    </td>
+      <td>
+        <%=movie_row.title%>
+      </td>
 
-    <td>
-      <%=movie_row.year.to_s%>
-    </td>
+      <td>
+        <%=movie_row.year.to_s%>
+      </td>
 
-    <td>
-    <%=@director_row.name%>
-    </td>
+      <td>
+        <%=@director_row.name%>
+      </td>
 
-    <td>
-      <a href=<%="/movies/#{movie_row.id}"%>>
+      <td>
+        <a href=<%="/movies/#{movie_row.id}"%>>
         Show details
       </a>
     </td>

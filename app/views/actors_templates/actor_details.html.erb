@@ -27,7 +27,7 @@
     Bio
   </dt>
   <dd>
-   <%=@actor_row.bio%>
+    <%=@actor_row.bio%>
   </dd>
 
   <dt>
@@ -78,28 +78,30 @@
     </th>
   </tr>
 
-  <% @actor_movies.each do |movie_row|%>
-  <tr>
-    <td>
-     <%=movie_row.title%>
-    </td>
+  <% @character_rows.each do |char_row|%>
+    <tr>
+      <td>
+        <%=Movie.where({:id => char_row.movie_id})[0].title%>
+      </td>
 
-    <td>
-      <%=movie_row.year.to_s%>
-    </td>
+      <td>
+        <%=Movie.where({:id => char_row.movie_id})[0].year%>
+      </td>
 
-    <td>
-    <%=Director.where({:id => movie_row.director_id})%>
-    </td>
+      <td>
+        <%=Director.where({:id => Movie.where({:id => char_row.movie_id})\
+    [0].director_id})[0].name%>
+      </td>
 
-    <td>
-      Brooks Hatlen
-    </td>
+      <td>
+        <%=char_row.name%>
+      </td>
 
-    <td>
-      <a href="/movies/1">
+      <td>
+        <a href=<%="/movies/#{char_row.movie_id}"%>>
         Show details
       </a>
     </td>
   </tr>
+  <%end%>
 </table>

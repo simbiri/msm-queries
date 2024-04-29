@@ -31,29 +31,29 @@
   </tr>
 
   <%@array_movies.each do |movie_row|%>
-  <tr>
-    <td>
-      <%=movie_row.id%>
-    </td>
+    <tr>
+      <td>
+        <%=movie_row.id%>
+      </td>
 
-    <td>
-      <img src=<%="#{movie_row.image}"%> style="width:250px;">
-    </td>
+      <td>
+        <img src=<%="#{movie_row.image}"%> style="width:250px;">
+      </td>
 
-    <td>
-     <%=movie_row.title%>
-    </td>
+      <td>
+        <%=movie_row.title%>
+      </td>
 
-    <td>
-      <%=movie_row.year.to_s%>
-    </td>
+      <td>
+        <%=movie_row.year.to_s%>
+      </td>
 
-    <td>
-      <%=Director.where({:id=>movie_row.director_id})[0].name%>
-    </td>
+      <td>
+        <%=Director.where({:id=>movie_row.director_id})[0].name%>
+      </td>
 
-    <td>
-      <a href=<%="/movies/#{movie_row.id}"%>>
+      <td>
+        <a href=<%="/movies/#{movie_row.id}"%>>
         Show details
       </a>
     </td>

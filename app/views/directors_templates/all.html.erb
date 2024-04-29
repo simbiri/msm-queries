@@ -27,25 +27,25 @@
   </tr>
 
   <% @array_directors.each do |director_row|%>
-  <tr>
-    <td>
+    <tr>
+      <td>
         <%=director_row.id%>
-    </td>
+      </td>
 
-    <td>
-      <img src=<%="#{director_row.image}"%> style="width:250px;">
-    </td>
+      <td>
+        <img src=<%="#{director_row.image}"%> style="width:250px;">
+      </td>
 
-    <td>
+      <td>
         <%=director_row.name%>
-    </td>
+      </td>
 
-    <td>
+      <td>
         <%=director_row.dob%>
-    </td>
+      </td>
 
-    <td>
-      <a href=<%="/directors/#{director_row.id}"%>>
+      <td>
+        <a href=<%="/directors/#{director_row.id}"%>>
         Show details
       </a>
     </td>

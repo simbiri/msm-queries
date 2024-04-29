@@ -22,9 +22,9 @@ class DirectorsController < ApplicationController
 
   def director_details
     id = params.fetch("director_id").to_i
-    @director_row = Director.where({:id=>id})[0]
+    @director_row = Director.where({ :id => id })[0]
 
-    @director_movies = Movie.where({:id=>id})
-    render({:template => "directors_templates/director_details"})
+    @director_movies = Movie.where({ :director_id => id })
+    render({ :template => "directors_templates/director_details" })
   end
 end
